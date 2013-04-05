@@ -1,4 +1,4 @@
-package com.jonwelzel.hellossl.wsresources;
+package com.jonwelzel.hellossl.services;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -12,13 +12,13 @@ import com.jonwelzel.hellossl.xml.Books;
 import com.jonwelzel.hellossl.xml.ObjectFactory;
 
 @Path("/books")
-public class BookResources {
+public class BookService {
 
   private final Logger log = Logger.getLogger(getClass());
   
   @GET
   @Produces(MediaType.TEXT_XML)
-  public Books getScanFilesList() {
+  public Books getBooksList() {
     log.info("Serving books list");
     return createBooks();
   }

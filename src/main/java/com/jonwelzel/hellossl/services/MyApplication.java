@@ -1,4 +1,4 @@
-package com.jonwelzel.hellossl.wsresources;
+package com.jonwelzel.hellossl.services;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
