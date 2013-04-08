@@ -3,7 +3,10 @@ package com.jonwelzel.hellossl.services;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.SecurityContext;
+import javax.ws.rs.core.UriInfo;
 
 import org.apache.log4j.Logger;
 
@@ -18,8 +21,9 @@ public class BookService {
   
   @GET
   @Produces(MediaType.TEXT_XML)
-  public Books getBooksList() {
-    log.info("Serving books list");
+  public Books getBooksList(@Context UriInfo uriInfo, @Context SecurityContext securityContext) {
+	log.info("Serving books list to \"" + securityContext.getUserPrincipal().getName() + "\" from \"" + uriInfo.getPath() + "\"");
+//    log.info("GETBOOKSLIST() -> \"" + uriInfo.getPath() + "\"");
     return createBooks();
   }
   

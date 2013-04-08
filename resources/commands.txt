@@ -1,0 +1,7 @@
+c:\eclipse\jdk1.7.0_05\jre\bin\keytool.exe -genkey -alias jonwelzel -keyalg RSA -keypass changethis -storepass changethis -keystore jonwelzel.jks
+
+c:\eclipse\jdk1.7.0_05\jre\bin\keytool.exe -export -alias jonwelzel -storepass changethis -file jonwelzel.cer -keystore jonwelzel.jks
+
+c:\eclipse\jdk1.7.0_05\jre\bin\keytool.exe -import -v -trustcacerts -alias cacerts -file jonwelzel.cer -keystore cacerts.jks -keypass changethis -storepass changethis
+
+c:\eclipse\jdk1.7.0_05\jre\bin\keytool.exe -importkeystore -srckeystore jonwelzel.jks -srcstoretype JKS -destkeystore jonwelzel.pfx -deststoretype PKCS12
