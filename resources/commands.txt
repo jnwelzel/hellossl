@@ -5,3 +5,5 @@ c:\eclipse\jdk1.7.0_05\jre\bin\keytool.exe -export -alias jonwelzel -storepass c
 c:\eclipse\jdk1.7.0_05\jre\bin\keytool.exe -import -v -trustcacerts -alias cacerts -file jonwelzel.cer -keystore cacerts.jks -keypass changethis -storepass changethis
 
 c:\eclipse\jdk1.7.0_05\jre\bin\keytool.exe -importkeystore -srckeystore jonwelzel.jks -srcstoretype JKS -destkeystore jonwelzel.pfx -deststoretype PKCS12
+
+c:\eclipse\jdk1.7.0_05\jre\bin\keytool.exe -importcert -v -trustcacerts -file "jonwelzel.cer" -alias jonwelzel -keystore "jonwelzel.bks" -provider org.bouncycastle.jce.provider.BouncyCastleProvider -providerpath "bcprov-jdk15on-148.jar" -storetype BKS -storepass "changethis"
